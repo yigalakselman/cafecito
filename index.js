@@ -184,10 +184,4 @@ onload = function() {
       hosts.appendChild(opt);
     }
   });
-
-  //download button
-  browse.onclick = function(){
-      var response = UrlFetchApp.fetch("http://www.google.com/");
-      console.log(response.getContentText());
-  }
 };
