@@ -5,6 +5,8 @@ onload = function() {
   var port = document.getElementById("port");
   var directory = document.getElementById("directory");
 
+  var browse = document.getElementById("browse");
+
   var socket = chrome.socket;
   var socketInfo;
   var filesMap = {};
@@ -139,6 +141,14 @@ onload = function() {
       }
     }
 
+    /*log all files
+    var n;
+    for(n in filesMap) {
+      if(typeof filesMap[n] !== 'function') {
+        console.log("f:" + filesMap[n].name);
+      }
+    }*/
+
     start.disabled = false;
     stop.disabled = true;
     directory.disabled = true;
@@ -174,4 +184,10 @@ onload = function() {
       hosts.appendChild(opt);
     }
   });
+
+  //download button
+  browse.onclick = function(){
+      var response = UrlFetchApp.fetch("http://www.google.com/");
+      console.log(response.getContentText());
+  }
 };
