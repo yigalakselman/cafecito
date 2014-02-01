@@ -4,10 +4,12 @@
         <meta charset="utf-8">
         <title>HTTP Webserver</title>
         <!-- build:css styles/app.css -->
-        <link rel="stylesheet" href="styles/bootstrap.css">
-        <link rel="stylesheet" href="styles/main.css">
+        <!-- <link rel="stylesheet" href="styles/bootstrap.css"> -->
+        <link rel="stylesheet" href="assets/styles/app.css" />
         <!-- endbuild -->
         <script src="index.js"></script>
+        <script type="text/javascript" src="//use.typekit.net/xhk4bfi.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
         <style>
           input[type="file"]::-webkit-file-upload-button {
             background-color: red;
@@ -45,35 +47,343 @@
             -moz-box-shadow: none;
             box-shadow: none;
           }
-
-          #logger {
-            border: solid 1px #c6c6c6;
-            border-radius: 5px;
-            box-shadow: inset 0px 0px 5px #c6c6c6;
+          .hero-unit {
+            float: left;
+            width: 50%;
+            min-height: 400px;
+            margin: 0 auto;
+            padding: 2rem;
+          }
+          .logger {
+            width: 50%;
             height: 100px;
+            min-height: 460px;
             overflow-y: auto;
+            background-color: #444;
+            color: white;
           }
 
           select { 
             display: block;
           }
+
+          .content {
+            clear: both;
+          }
         </style>
     </head>
     <body>
-      <div class="hero-unit">
-        <h1>HTTP Webserver</h1>
-         <p>Serving you locally</p>
-         <p>
-           <input type="file" webkitdirectory id="directory"/><br />
-           <select id="hosts">
-             <option value="127.0.0.1">lo - 127.0.0.1</option> 
-           </select>
-           <input type="text" id="port" value="8080"/><br />
-           <button id="start" class="btn btn-primary btn-large" disabled>Start</button>
-           <button id="stop" class="btn btn-warning btn-large"  disabled>Stop</button>
-           <button id="browse">Browse</button>
-         </p>
+
+      <div class="row global-header">
+        <div class="large-12 columns">
+          <h1>Cafecito</h1>
+        </div>
       </div>
-      <pre id="logger"></pre>
+
+      <section class="server">
+        <div class="hero-unit">
+          <h1>Webserver Config</h1>
+           <p>Serving you locally</p>
+           <p>
+             <input type="file" webkitdirectory id="directory"/><br />
+             <select id="hosts">
+               <option value="127.0.0.1">127.0.0.1</option> 
+             </select>
+             <input type="text" id="port" value="8080"/><br />
+             <button id="start" disabled>Start</button>
+             <button id="stop" disabled>Stop</button>
+           </p>
+        </div>
+        <div class="logger">
+          <pre id="logger"></pre>
+        </div>
+      </section>
+
+      <section class="content">
+        <dl class="tabs horizontal" data-tab>
+          <dd class="active"><a href="#panel2-1">News<br><div class="arrow-down"></div></a></dd>
+          <dd><a href="#panel2-2"><div class="arrow-down"></div>&nbsp; Blogs</a></dd>
+          <dd><a href="#panel2-3"><div class="arrow-down"></div>&nbsp; Tutorials</a></dd>
+          <dd><a href="#panel2-4"><div class="arrow-down"></div>&nbsp; Books</a></dd>
+        </dl>
+        <div class="tabs-content">
+          <div class="content active" id="panel2-1">
+
+            <table>
+              <thead>
+                <tr>
+                  <th width="25"></th>
+                  <th width="200">Title</th>
+                  <th>Date</th>
+                  
+                  <th width="200">url</th>
+                  <th width="150">Download</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                      <div class="checkbox">
+                        <input type="checkbox" id="check-news-1" name="check" />
+                        <label for="check-news-1"></label>
+                      </div>
+                  </td>
+                  <td>New York Times</td>
+                  <td>Friday, January 31, 2014</td>
+                  
+                  <td><a href="http://nytimes.com/">nytimes.com</a></td>
+                  <td><a href="http://cdhackathon.s3.amazonaws.com/content/news/nytimes.com.zip" class="button">Download</a></td>
+                </tr>
+                <tr>
+                  <td>
+                      <div class="checkbox">
+                        <input type="checkbox" id="check-news-2" name="check" />
+                        <label for="check-news-2"></label>
+                      </div>
+                  </td>
+                  <td>New York Times</td>
+                  <td>Saturday, February 1, 2014</td>
+                  
+                  <td><a href="http://nytimes.com/">nytimes.com</a></td>
+                  <td><a href="http://cdhackathon.s3.amazonaws.com/content/news/nytimes.com.zip" class="button">Download</a></td>
+                </tr>
+                <tr>
+                  <td>
+                      <div class="checkbox">
+                        <input type="checkbox" id="check-news-3" name="check" />
+                        <label for="check-news-3"></label>
+                      </div>
+                  </td>
+                  <td>El Nuevo Herald</td>
+                  <td>Friday, January 31, 2014</td>
+                  
+                  <td><a href="http://http://www.elnuevoherald.com/">elnuevoherald.com</a></td>
+                  <td><a href="http://cdhackathon.s3.amazonaws.com/content/news/elnuevoherald.com.zip" class="button">Download</a></td>
+                </tr>
+                <tr>
+                  <td>
+                      <div class="checkbox">
+                        <input type="checkbox" id="check-news-4" name="check" />
+                        <label for="check-news-4"></label>
+                      </div>
+                  </td>
+                  <td>El Nuevo Herald</td>
+                  <td>Saturday, February 1, 2014</td>
+                  
+                  <td><a href="http://http://www.elnuevoherald.com/">elnuevoherald.com</a></td>
+                  <td><a href="http://cdhackathon.s3.amazonaws.com/content/news/elnuevoherald.com.zip" class="button">Download</a></td>
+                </tr>
+                <tr>
+                  <td>
+                      <div class="checkbox">
+                        <input type="checkbox" id="check-news-5" name="check" />
+                        <label for="check-news-5"></label>
+                      </div>
+                  </td>
+                  <td>BBC</td>
+                  <td>Friday, January 31, 2014</td>
+                  
+                  <td><a href="http://http://www.cafefuerte.com/">bbc.com</a></td>
+                  <td><a href="http://cdhackathon.s3.amazonaws.com/content/news/bbc.com.zip" class="button">Download</a></td>
+                </tr>
+                <tr>
+                  <td>
+                      <div class="checkbox">
+                        <input type="checkbox" id="check-news-6" name="check" />
+                        <label for="check-news-6"></label>
+                      </div>
+                  </td>
+                  <td>BBC</td>
+                  <td>Saturday, February 1, 2014</td>
+                  
+                  <td><a href="http://http://www.elnuevoherald.com/">bbc.com</a></td>
+                  <td><a href="http://cdhackathon.s3.amazonaws.com/content/news/bbc.com.zip" class="button">Download</a></td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+          <div class="content" id="panel2-2">
+
+            <table>
+              <thead>
+                <tr>
+                  <th width="25"></th>
+                  <th width="200">Title</th>
+                  <th>Description</th>
+                  
+                  <th width="200">url</th>
+                  <th width="150">Download</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                      <div class="checkbox">
+                        <input type="checkbox" id="check-blogs-1" name="check" />
+                        <label for="check-news-1"></label>
+                      </div>
+                  </td>
+                  <td>Generacion Y</td>
+                  <td>Blog para narrar la Cuba profunda, su cotidianidad, sus problemas y sueños.</td>
+                  <td><a href="http://lageneraciony.com/">lageneraciony.com</a></td>
+                  <td><a href="http://cdhackathon.s3.amazonaws.com/content/blogs/generacionyen.wordpress.com.zip" class="button">Download</a></td>
+                </tr>
+                <tr>
+                  <td>
+                      <div class="checkbox">
+                        <input type="checkbox" id="check-news-5" name="check" />
+                        <label for="check-news-5"></label>
+                      </div>
+                  </td>
+                  <td>Cafe Fuerte</td>
+                  <td>Noticias de última hora de Cuba y Miami.</td>
+                  <td><a href="http://http://www.cafefuerte.com/">cafefuerte.com</a></td>
+                  <td><a href="http://cdhackathon.s3.amazonaws.com/content/news/cafefuerte.com.zip" class="button">Download</a></td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+          <div class="content" id="panel2-3">
+
+            <table>
+              <thead>
+                <tr>
+                  <th width="25"></th>
+                  <th width="200">Title</th>
+                  <th>Description</th>
+                  
+                  <th width="200">url</th>
+                  <th width="150">Download</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                      <div class="checkbox">
+                        <input type="checkbox" id="check-tutorials-1" name="check" />
+                        <label for="check-news-1"></label>
+                      </div>
+                  </td>
+                  <td>JS for Cats</td>
+                  <td>JavaScript is a programming language or, in other words, a means by which a computer is instructed to do things. Just the same as one controls humans with hisses and meows, one controls computers with statements written in a programming language...</td>
+                  
+                  <td><a href="http://jsforcats.com/">jsforcats.com</a></td>
+                  <td><a href="http://cdhackathon.s3.amazonaws.com/content/howto/jsforcats.com.zip" class="button">Download</a></td>
+                </tr>
+                <tr>
+                  <td>
+                      <div class="checkbox">
+                        <input type="checkbox" id="check-tutorials-2" name="check" />
+                        <label for="check-news-2"></label>
+                      </div>
+                  </td>
+                  <td>Turn Windows into an Access Point</td>
+                  <td>Configuring Windows 7 To Provide Secure Wireless Access Point Services to Wi-Fi Clients</td>
+                  
+                  <td><a href="http://javascriptissexy.com/">windows-howto.com</a></td>
+                  <td><a href="/" class="button">Download</a></td>
+                </tr>
+                <tr>
+                  <td>
+                      <div class="checkbox">
+                        <input type="checkbox" id="check-tutorials-2" name="check" />
+                        <label for="check-news-3"></label>
+                      </div>
+                  </td>
+                  <td>Build A Linux-Based Wireless Access Point</td>
+                  <td>With a little time and effort, you can build a Linux-based wireless access point that provides the features of high-end WAPs with less expense...</td>
+                  
+                  <td><a href="https://linux.org">linux.org</a></td>
+                  <td><a href="/" class="button">Download</a></td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+          <div class="content" id="panel2-4">
+
+            <table>
+              <thead>
+                <tr>
+                  <th width="25"></th>
+                  <th width="200">Title</th>
+                  <th>Description</th>
+                  
+                  <th width="200">Author</th>
+                  <th width="150">Download</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                      <div class="checkbox">
+                        <input type="checkbox" id="check-books-1" name="check" />
+                        <label for="check-news-1"></label>
+                      </div>
+                  </td>
+                  <td>Pride and Prejudice</td>
+                  <td>One of the most popular novels of all time--that features splendidly civilized sparring between the proud Mr. Darcy and the prejudiced Elizabeth Bennet as they play out their spirited...</td>
+                  
+                  <td>Jane Austen</td>
+                  <td><a href="http://cdhackathon.s3.amazonaws.com/content/books/prideandprejudice.zip" class="button">Download</a></td>
+                </tr>
+                <tr>
+                  <td>
+                      <div class="checkbox">
+                        <input type="checkbox" id="check-books-2" name="check" />
+                        <label for="check-news-2"></label>
+                      </div>
+                  </td>
+                  <td>The Great Gatsby</td>
+                  <td>In 1922, F. Scott Fitzgerald announced his decision to write "something new--something extraordinary and beautiful and simple and intricately patterned." That extraordinary, beautiful, intricately patterned...</td>
+                  
+                  <td>F. Scott Fitzgerald</td>
+                  <td><a href="http://cdhackathon.s3.amazonaws.com/content/books/greatgatsby.zip" class="button">Download</a></td>
+                </tr>
+                <tr>
+                  <td>
+                      <div class="checkbox">
+                        <input type="checkbox" id="check-books-3" name="check" />
+                        <label for="check-news-3"></label>
+                      </div>
+                  </td>
+                  <td>Count of Monte Cristo</td>
+                  <td>Thrown in prison for a crime he has not committed, Edmond Dantès is confined to the grim fortress of If. There he learns of a great hoard of treasure hidden on the Isle of Monte Cristo and he becomes...</td>
+                  
+                  <td>Alexandre Dumas</td>
+                  <td><a href="http://cdhackathon.s3.amazonaws.com/content/news/nytimes.com.zip" class="button">Download</a></td>
+                </tr>
+                <tr>
+                  <td>
+                      <div class="checkbox">
+                        <input type="checkbox" id="check-books-4" name="check" />
+                        <label for="check-news-4"></label>
+                      </div>
+                  </td>
+                  <td>The Adventures of Huckleberry Finn</td>
+                  <td>Of all the contenders for the title of The Great American Novel, none has a better claim than The Adventures of Huckleberry Finn. Intended at first as a simple story of a boy's adventures in the Mississippi Valley...</td>
+                  
+                  <td>Mark Twain</td>
+                  <td><a href="http://cdhackathon.s3.amazonaws.com/content/news/nytimes.com.zip" class="button">Download</a></td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+
+          <div class="row download-multiple">
+            <div class="large-12 columns">
+              <a href="" class="button">Download Selected Items</a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/foundation/js/foundation.min.js"></script>
+    <script src="bower_components/foundation/js/foundation/foundation.magellan.js"></script>
+    <script src="assets/js/app.js"></script>
     </body>
 </html>
